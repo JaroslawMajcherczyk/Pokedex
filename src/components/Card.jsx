@@ -1,8 +1,8 @@
 
 
-const Card = ({pokemon, loading, infoPokemon}) => {
 
-    //console.log(pokemon)
+const Card = ({setOpenModal, pokemon, loading, infoPokemon}) => {
+  
   return (
 
     <>
@@ -11,11 +11,15 @@ const Card = ({pokemon, loading, infoPokemon}) => {
       pokemon.map((item, index) =>{
         return (
             <>
-             <div key={index} onClick={() => infoPokemon(item)}>
+             <div key={index}  onClick={() => {
+              infoPokemon(item)
+              setOpenModal(true)
+             } }>
                  <div>{item.id}</div>
                  <div>{item.name}</div>
                  <div><img src={item.sprites.front_default} alt="" /></div>
              </div>
+             
             </>
         )
    

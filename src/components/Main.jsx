@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import PokemonInfo from './PokemonInfo';
 import Card from './Card';
 
+
 const Main = () => {
     const [pokeData, setPokeData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -11,6 +12,8 @@ const Main = () => {
     const [prevUrl, setPrevUrl] = useState();
     const [pokedex, setPokedex] = useState();
   
+    const [openModal, setOpenModal] = useState(false)
+
   
   
     const pokeFun = async () => {
@@ -64,7 +67,7 @@ const Main = () => {
      
         <div className='container_grid'>
        
-        <Card pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokedex(poke)}/>
+        <Card setOpenModal={setOpenModal} open={openModal}  pokemon={pokeData} loading={loading} infoPokemon={poke=>setPokedex(poke)}/>
         
         </div>
        <div>
@@ -85,8 +88,10 @@ const Main = () => {
        </div>
        </div>
        <div>
-        <PokemonInfo data={pokedex}/>
+        <PokemonInfo open={openModal} 
+         onClose={() => setOpenModal(false)}  data={pokedex}/>
        </div>
+
        </div>
       </>
     )
