@@ -1,6 +1,6 @@
-import React from 'react'
 
-const Card = ({pokemon, loading}) => {
+
+const Card = ({pokemon, loading, infoPokemon}) => {
 
     //console.log(pokemon)
   return (
@@ -8,10 +8,10 @@ const Card = ({pokemon, loading}) => {
     <>
     { 
     loading ? <h1>Wczytywanie...</h1> : 
-    pokemon.map((item) =>{
+      pokemon.map((item, index) =>{
         return (
             <>
-             <div  key={item.id}>
+             <div key={index} onClick={() => infoPokemon(item)}>
                  <div>{item.id}</div>
                  <div>{item.name}</div>
                  <div><img src={item.sprites.front_default} alt="" /></div>
