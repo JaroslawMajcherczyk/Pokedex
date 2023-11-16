@@ -4,7 +4,7 @@
 const PokemonInfo = ({ data, open, onClose }) => {
   if (!open) return null;
   const style = `info_type ${data.types[0].type.name}`
-  const style2 = `${!data.types[1] ? "" : data.types[1].type.name}`
+  const style2 = `info_type ${!data.types[1] ? "" : data.types[1].type.name}`
   return (
     <>
       <div onClick={onClose} >
@@ -21,13 +21,15 @@ const PokemonInfo = ({ data, open, onClose }) => {
 
                 <div className='info_container'>
                   <div className="info_wrapper">
+                    <div className="info_title_wrapper">
                     <p className="info_id"># {data.id}</p>
                     <h1 className="info_title">{data.name}</h1>
+                    </div>
                     <img className="info_img" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${data.id}.svg`} alt="" />
                     <div className="info_types">
                       {/* <p className={style}>{data.types[0].type.name }</p> */}
-                      <p className={style}>{data.types[0].type.name}</p>
-                      <p>{!data.types[1] ? "" : <span className={style2}> {data.types[1].type.name} </span>}</p>
+                      <p ><span className={style}>{data.types[0].type.name}</span></p>
+                      <p >{!data.types[1] ? "" : <span className={style2}> {data.types[1].type.name} </span>}</p>
                     </div>
                   </div>
 
@@ -51,10 +53,11 @@ const PokemonInfo = ({ data, open, onClose }) => {
               </>
             )
             }
+
             <div className='btn_container'>
 
-              <button onClick={onClose}  >
-                <span >Zamknij</span>
+              <button className="btn_close" onClick={onClose}  >
+                Zamknij
               </button>
             </div>
 

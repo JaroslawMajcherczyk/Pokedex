@@ -51,7 +51,7 @@ body {
 
 
 
-
+/* types colors */
 
 .bug {
   background-color: #94BC4A;
@@ -243,27 +243,63 @@ margin-right: 20px;
  
 }
 
+.info_title_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 .info_id{
-
+font-size: 25px;
 }
 .info_title{
-
+  text-transform: capitalize;
 }
 .info_img{
 display: flex;
 height: 250px;
 width: 250px;
 }
+.info_types{
+margin-top: 40px;
+margin-bottom: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
 .info_type{
+  font-size: 24px;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 5px;
+}
 
+.state_wrapper{
+  font-size: 20px;
+  text-transform: capitalize;
 }
 .btn_container{
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px 20px 20px 10px;
+  margin-left: 100px;
+  
 }
-
+.btn_close{
+  font-weight: 400;
+  font-size: 20px;
+  border: none;
+  background-color: #e0a7f6;
+  border-radius: 5px;
+  padding: 15px;
+  margin-right: 20px;
+  }
+  
+  .btn_close:hover{
+    background-color: #d376f8;
+  }
 
 .modalContainer {
   margin-top: 50px;
